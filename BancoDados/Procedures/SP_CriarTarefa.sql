@@ -14,7 +14,7 @@ AS
 	/* 
 	Documentação
 	Módulo............: Tarefa
-	Objetivo..........: Cria tarefa
+	Objetivo..........: Criar uma tarefa
 	EX................: EXEC [dbo].[SP_CriarTarefa] 'Fritar massas de pastel', '20201215 02:30:00 PM', NULL, 1, 2, 2 
 	*/
 	BEGIN

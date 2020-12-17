@@ -76,4 +76,3 @@ CREATE TABLE Comentario (
 	IdTarefa SMALLINT NOT NULL FOREIGN KEY (IdTarefa) REFERENCES Tarefa
 
 )
-

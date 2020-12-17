@@ -13,7 +13,7 @@ AS
 	/* 
 	Documentação
 	Módulo............: Usuario
-	Objetivo..........: Cria usuario
+	Objetivo..........: Criar um usuario
 	EX................: EXEC [dbo].[SP_CriarUsuario] 'Joao', 'Silva', '10/10/1995', '7015c24fe4751a169a54d2f64d12b77f', 0, 1, 1
 	*/
 	BEGIN
