@@ -2,8 +2,7 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'[dbo].[SP_Consult
 	DROP PROCEDURE [dbo].[SP_ConsultarUsuario]
 GO
 CREATE PROCEDURE [dbo].[SP_ConsultarUsuario]
-
-(@IdUsuario SMALLINT)
+	@IdUsuario SMALLINT
 	
 AS
 	/* 
@@ -13,8 +12,8 @@ AS
 	EX................: EXEC [dbo].[SP_ConsultarUsuario] 1
 	*/
 	BEGIN
-
-		SELECT * FROM Usuario
-		WHERE Usuario.IdUsuario = @IdUsuario
+		SELECT IdUsuario, Nome, Sobrenome, DataNascimento, EGestor, EstaAtivo, IdGestor
+			FROM [dbo].[Usuario]
+			WHERE IdUsuario = @IdUsuario
 		
 	END

@@ -8,7 +8,7 @@ CREATE PROCEDURE [dbo].[SP_CriarUsuario]
 	@Senha VARCHAR(50),
 	@EGestor BIT,
 	@EstaAtivo BIT,
-	@IdGestor SMALLINT
+	@IdGestor SMALLINT = NULL
 AS
 	/* 
 	Documentação
@@ -17,9 +17,21 @@ AS
 	EX................: EXEC [dbo].[SP_CriarUsuario] 'Joao', 'Silva', '10/10/1995', '7015c24fe4751a169a54d2f64d12b77f', 0, 1, 1
 	*/
 	BEGIN
-		INSERT INTO Usuario
-		(Nome, Sobrenome, DataNascimento, Senha, EGestor, EstaAtivo, IdGestor)
-		VALUES
-		(@Nome, @Sobrenome, @DataNascimento, @Senha, @EGestor, @EstaAtivo, @IdGestor)
-		
+		INSERT INTO [dbo].[Usuario]
+			(Nome, 
+			 Sobrenome, 
+			 DataNascimento,
+			 Senha,
+			 EGestor,
+			 EstaAtivo,
+			 IdGestor)
+			VALUES
+			(@Nome, 
+			 @Sobrenome,
+			 @DataNascimento,
+			 @Senha, 
+			 @EGestor, 
+			 @EstaAtivo, 
+			 @IdGestor)
+			RETURN SCOPE_IDENTITY()
 	END

@@ -12,7 +12,8 @@ AS
 	EX................: EXEC [dbo].[SP_ConsultarTotalTarefasGestor] 1
 	*/
 	BEGIN
-		SELECT COUNT(*) AS TotalTarefas FROM Tarefa 
-		WHERE IdStatusTarefa = 2 OR IdStatusTarefa = 3 OR IdStatusTarefa = 4 AND IdGestor = @IdGestor 
+		SELECT COUNT(*) AS TotalTarefas FROM [dbo].[Tarefa]
+			WHERE IdStatusTarefa IN (2, 3, 4)
+				AND IdGestor = @IdGestor 
 
 	END

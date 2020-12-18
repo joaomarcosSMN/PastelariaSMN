@@ -12,8 +12,9 @@ AS
 	EX................: EXEC [dbo].[SP_ConsultarComentarioTarefa] 1
 	*/
 	BEGIN
-        SELECT * FROM Comentario
-		WHERE IdTarefa = @IdTarefa
+        SELECT IdComentario, Descricao, IdTarefa 
+			FROM Comentario
+			WHERE IdTarefa = @IdTarefa
 
 	END
 

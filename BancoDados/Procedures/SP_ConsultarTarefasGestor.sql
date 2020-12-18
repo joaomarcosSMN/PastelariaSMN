@@ -12,7 +12,9 @@ AS
 	EX................: EXEC [dbo].[SP_ConsultarTarefasGestor] 1
 	*/
 	BEGIN
-		SELECT * FROM Tarefa 
-		WHERE IdStatusTarefa = 2 OR IdStatusTarefa = 3 OR IdStatusTarefa = 4 AND IdGestor = @IdGestor 
+		SELECT IdTarefa, Descricao, DataCadastro, DataLimite, DataConclusao, DataCancelada, IdGestor, IdSubordinado, IdStatusTarefa   
+			FROM Tarefa 
+			WHERE IdStatusTarefa IN (2,3,4) 
+				AND IdGestor = @IdGestor 
 
 	END

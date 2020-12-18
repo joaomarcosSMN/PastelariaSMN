@@ -2,8 +2,7 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'[dbo].[SP_Desativ
 	DROP PROCEDURE [dbo].[SP_DesativarUsuario]
 GO
 CREATE PROCEDURE [dbo].[SP_DesativarUsuario]
-
-(@IdUsuario SMALLINT)
+	@IdUsuario SMALLINT
 	
 AS
 	/* 
@@ -13,9 +12,8 @@ AS
 	EX................: EXEC [dbo].[SP_DesativarUsuario] 1
 	*/
 	BEGIN
-
-		UPDATE Usuario
-		SET EstaAtivo = 0
-		WHERE IdUsuario = @IdUsuario
+		UPDATE [dbo].[Usuario]
+			SET EstaAtivo = 0
+			WHERE IdUsuario = @IdUsuario
 		
 	END

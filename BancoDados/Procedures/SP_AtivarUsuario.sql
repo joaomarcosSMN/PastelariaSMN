@@ -12,9 +12,8 @@ AS
 	EX................: EXEC [dbo].[SP_AtivarUsuario] 1
 	*/
 	BEGIN
-
 		UPDATE Usuario
-		SET EstaAtivo = 1
-		WHERE IdUsuario = @IdUsuario
+			SET EstaAtivo = 1
+			WHERE IdUsuario = @IdUsuario
 		
 	END

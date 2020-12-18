@@ -2,8 +2,8 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'[dbo].[SP_Alterar
 	DROP PROCEDURE [dbo].[SP_AlterarStatusDaTarefa]
 GO
 CREATE PROCEDURE [dbo].[SP_AlterarStatusDaTarefa]
-
-(@IdTarefa SMALLINT, @NovoStatus TINYINT)
+	@IdTarefa SMALLINT, 
+	@NovoStatus TINYINT
 	
 AS
 	/* 
@@ -14,8 +14,8 @@ AS
 	*/
 	BEGIN
 
-		UPDATE Tarefa
-		SET IdStatusTarefa = @NovoStatus
-		WHERE IdTarefa = @IdTarefa
+		UPDATE [dbo].[Tarefa]
+			SET IdStatusTarefa = @NovoStatus
+			WHERE IdTarefa = @IdTarefa
 		
 	END

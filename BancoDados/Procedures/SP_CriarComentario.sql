@@ -13,10 +13,10 @@ AS
 	EX................: EXEC [dbo].[SP_CriarComentario] 'Faltou energia dia 17/12', 1
 	*/
 	BEGIN
-        INSERT INTO Comentario
-        (Descricao, IdTarefa)
-        VALUES
-        (@Comentario, @IdTarefa)
+        INSERT INTO [dbo].[Comentario]
+			(Descricao, IdTarefa)
+			VALUES
+			(@Comentario, @IdTarefa)
 
 	END
 

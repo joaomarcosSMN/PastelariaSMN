@@ -2,7 +2,8 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'[dbo].[SP_Consult
 	DROP PROCEDURE [dbo].[SP_ConsultarTarefasUsuario]
 GO
 CREATE PROCEDURE [dbo].[SP_ConsultarTarefasUsuario]
-(@IdUsuario SMALLINT)	
+	@IdUsuario SMALLINT
+
 AS
 	/* 
 	Documentação
@@ -11,6 +12,7 @@ AS
 	EX................: EXEC [dbo].[SP_ConsultarTarefasUsuario] 1
 	*/
 	BEGIN
-		SELECT * FROM Tarefa 
-		WHERE IdSubordinado = @IdUsuario
+		SELECT IdTarefa, Descricao, DataCadastro, DataLimite, DataConclusao, DataCancelada, IdGestor, IdSubordinado, IdStatusTarefa  
+			FROM [dbo].[Tarefa] 
+			WHERE IdSubordinado = @IdUsuario
 	END

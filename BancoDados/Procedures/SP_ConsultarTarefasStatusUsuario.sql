@@ -11,6 +11,7 @@ AS
 	EX................: EXEC [dbo].[SP_ConsultarTarefasStatusUsuario] 1, 1
 	*/
 	BEGIN
-		SELECT * FROM Tarefa 
-		WHERE IdSubordinado = @IdUsuario AND IdStatusTarefa = @IdStatusTarefa
+		SELECT IdTarefa, Descricao, DataCadastro, DataLimite, DataConclusao, DataCancelada, IdGestor, IdSubordinado, IdStatusTarefa  
+			FROM Tarefa 
+			WHERE IdSubordinado = @IdUsuario AND IdStatusTarefa = @IdStatusTarefa
 	END

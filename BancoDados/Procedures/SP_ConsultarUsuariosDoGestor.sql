@@ -7,12 +7,13 @@ CREATE PROCEDURE [dbo].[SP_ConsultarUsuariosDoGestor]
 AS
 	/* 
 	Documentação
-	Módulo............: Tarefa
+	Módulo............: Usuário
 	Objetivo..........: Consultar todos os usuários de acordo com IdGestor
 	EX................: EXEC [dbo].[SP_ConsultarUsuariosDoGestor] 1
 	*/
 	BEGIN
-		SELECT * FROM Usuario 
-		WHERE IdGestor = @IdGestor
+		SELECT IdUsuario, Nome, Sobrenome, EstaAtivo
+			FROM [dbo].[Usuario]
+			WHERE IdGestor = @IdGestor
 
 	END

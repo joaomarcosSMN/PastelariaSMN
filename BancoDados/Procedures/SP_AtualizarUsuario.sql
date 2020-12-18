@@ -2,8 +2,10 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'[dbo].[SP_Atualiz
 	DROP PROCEDURE [dbo].[SP_AtualizarUsuario]
 GO
 CREATE PROCEDURE [dbo].[SP_AtualizarUsuario]
-
-(@IdUsuario SMALLINT, @Nome VARCHAR(30), @Sobrenome VARCHAR(50), @Senha VARCHAR(50))
+	@IdUsuario SMALLINT, 
+	@Nome VARCHAR(30), 
+	@Sobrenome VARCHAR(50), 
+	@Senha VARCHAR(50)
 	
 AS
 	/* 
@@ -15,7 +17,9 @@ AS
 	BEGIN
 
 		UPDATE Usuario
-		SET Nome = @Nome, Sobrenome = @Sobrenome, Senha = @Senha
-		WHERE IdUsuario = @IdUsuario
+			SET Nome = @Nome, 
+				Sobrenome = @Sobrenome, 
+				Senha = @Senha
+			WHERE IdUsuario = @IdUsuario
 		
 	END

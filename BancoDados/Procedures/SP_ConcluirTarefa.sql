@@ -2,8 +2,7 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'[dbo].[SP_Conclui
 	DROP PROCEDURE [dbo].[SP_ConcluirTarefa]
 GO
 CREATE PROCEDURE [dbo].[SP_ConcluirTarefa]
-
-(@IdTarefa SMALLINT)
+	@IdTarefa SMALLINT
 	
 AS
 	/* 
@@ -14,8 +13,8 @@ AS
 	*/
 	BEGIN
 
-		UPDATE Tarefa
-		SET DataConclusao = GETDATE()
-		WHERE IdTarefa = @IdTarefa
+		UPDATE [dbo].[Tarefa]
+			SET DataConclusao = GETDATE()
+			WHERE IdTarefa = @IdTarefa
 		
 	END
