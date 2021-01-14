@@ -2,7 +2,7 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'[dbo].[SP_EditarD
 	DROP PROCEDURE [dbo].[SP_EditarDataLimite]
 GO
 CREATE PROCEDURE [dbo].[SP_EditarDataLimite]
-	@IdTarefa BIT,
+	@IdTarefa SMALLINT,
 	@DataLimite DATETIME
 
 AS

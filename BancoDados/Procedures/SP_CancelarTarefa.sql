@@ -13,7 +13,8 @@ AS
 	*/
 	BEGIN
 		UPDATE Tarefa 
-			SET DataCancelada = GETDATE()
+			SET DataCancelada = GETDATE(),
+				IdStatusTarefa = 5
 			WHERE IdTarefa = @IdTarefa
 
 	END

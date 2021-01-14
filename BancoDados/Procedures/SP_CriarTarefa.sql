@@ -15,7 +15,7 @@ AS
 	Documentação
 	Módulo............: Tarefa
 	Objetivo..........: Criar uma tarefa
-	EX................: EXEC [dbo].[SP_CriarTarefa] 'Fritar massas de pastel', '20201215 02:30:00 PM', 1, 2, 2 
+	EX................: EXEC [dbo].[SP_CriarTarefa] 'Limpar o banheiro', '20201215 02:30:00 PM', 1, 2, 4 
 	*/
 	BEGIN
 		INSERT INTO [dbo].[Tarefa]
