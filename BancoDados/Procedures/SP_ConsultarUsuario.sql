@@ -12,8 +12,19 @@ AS
 	EX................: EXEC [dbo].[SP_ConsultarUsuario] 1
 	*/
 	BEGIN
-		SELECT IdUsuario, Nome, Sobrenome, DataNascimento, EGestor, EstaAtivo, IdGestor
-			FROM [dbo].[Usuario]
-			WHERE IdUsuario = @IdUsuario
+		SELECT u.IdUsuario, 
+			   u.Nome, 
+			   u.Sobrenome, 
+			   u.DataNascimento, 
+			   u.EGestor, 
+			   u.EstaAtivo, 
+			   u.IdGestor,
+			   g.Nome AS NomeGestor,
+			   g.Sobrenome AS SobrenomeGestor
+
+			FROM [dbo].[Usuario] AS u
+				LEFT JOIN [dbo].[Usuario] AS g
+					ON u.IdGestor = g.IdUsuario
+			WHERE u.IdUsuario = @IdUsuario
 		
 	END

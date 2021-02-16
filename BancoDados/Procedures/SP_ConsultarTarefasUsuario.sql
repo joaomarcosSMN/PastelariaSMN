@@ -9,10 +9,23 @@ AS
 	Documentação
 	Módulo............: Tarefa
 	Objetivo..........: Consulta as tarefas de um usuário específico
-	EX................: EXEC [dbo].[SP_ConsultarTarefasUsuario] 1
+	EX................: EXEC [dbo].[SP_ConsultarTarefasUsuario] 2
 	*/
 	BEGIN
-		SELECT IdTarefa, Descricao, DataCadastro, DataLimite, DataConclusao, DataCancelada, IdGestor, IdSubordinado, IdStatusTarefa  
-			FROM [dbo].[Tarefa] 
+		SELECT t.IdTarefa, 
+			   t.Descricao, 
+			   t.DataCadastro, 
+			   t.DataLimite, 
+			   t.DataConclusao, 
+			   t.DataCancelada, 
+			   t.IdGestor, 
+			   u.Nome AS NomeGestor, 
+			   t.IdSubordinado, 
+			   u.Nome AS NomeSubordinado, 
+			   t.IdStatusTarefa  
+			FROM [dbo].[Tarefa] AS t
+				INNER JOIN [dbo].[Usuario] AS u 
+					ON t.IdGestor = u.IdUsuario 
+						OR t.IdSubordinado = u.IdUsuario
 			WHERE IdSubordinado = @IdUsuario
 	END

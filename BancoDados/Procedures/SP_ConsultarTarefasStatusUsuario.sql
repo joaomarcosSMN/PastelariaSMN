@@ -2,7 +2,9 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'[dbo].[SP_Consult
 	DROP PROCEDURE [dbo].[SP_ConsultarTarefasStatusUsuario]
 GO
 CREATE PROCEDURE [dbo].[SP_ConsultarTarefasStatusUsuario]
-(@IdUsuario SMALLINT, @IdStatusTarefa TINYINT)	
+	@IdUsuario SMALLINT, 
+	@IdStatusTarefa TINYINT
+
 AS
 	/* 
 	Documentação
